@@ -1,0 +1,131 @@
+<!-- 在 HTML5 中设置视频和音频的方式
+         <video width="640" height="360" src="http://...">
+            您的浏览器不支持 video 元素
+         </video>
+      音频的设置方式一样，只是标签换成了 audio 。
+ -->
+
+ <!-- 指定多个播放格式和编码格式
+         <video width="640" height="360" src="http://...">
+            <source src="sample.ogv" type="video/ogg";codes="theora,vorbis">
+            <source src="sample.mov" type="video/quicktime">
+         </video>     
+
+      参数解释：
+         src:URL 地址
+         type:媒体类型
+         codes:编码格式  
+  -->
+
+  <!-- 浏览器对视频编码格式的支持
+      浏览器   支持的视频格式
+                           PC端     移动端
+      Chrome               MP4      MP4, WebM,M3U8
+      Firefox              MP4      MP4, WebM,M3U8
+      Internet Explorer    MP4      MP4,M3U8
+   -->
+
+   <!-- 其他属性
+      autoplay:指定媒体在页面加载后自动播放
+
+      preload：预加载。
+               三个可选值：none（不加载）；metadata（元数据加载：媒体大小，第一帧，持续时间等）;auto:全部加载
+
+      poster（video 属性）：若视频无法播放则用一副图片代替
+                           实例：<video src="sample.mov" poster="1.jpg"></video>
+
+      loop:是否循环播放
+
+      controls：是否增加控制条
+
+      error:若播放失败，返回失败原因
+               MEDIA_ERR_ABORTED(数字1)：用户操作而中止
+               MEDIA_ERR_NETWORK(数字2)：网络错误而中止
+               MEDIA_ERR_DECODE(数字3)：解码错误而中止
+               MEDIA_ERR_SRC_NOT_SUPPORTED(数字4)：不支持媒体格式
+
+               如何用代码获取错误状态
+               <video src="http://..." id="sample"></video>   
+               <script>
+                  var video = document.getElementById("sample");
+                  video.addEventListener("error",function(){
+                     var error = video.error;   //获取错误属性
+                     switch(error.code)         //获取错误数字值
+                     ｛
+                           case 1:
+                              alert("用户操作错误");
+                              break;
+                           ...
+                     ｝         
+                  })
+               </script>    
+
+         networkState:读取当前网络状态
+
+         currentSrc:读取 URL 播放源
+
+         readyState:返回媒体当前播放位置的就绪状态
+
+         currentTime startTime duration:返回当前播放的位置，返回开始时间，返回总时间
+
+         played,paused,ended:返回各自代表意义的布尔值        
+
+         defaultPlaybackRate：该属性可以读取修改媒体的默认的播放速率
+
+         playbackRate：该属性可以读取修改媒体的当前的的播放速率
+
+         volume,muted:设置播放的音量，和是否静音（布尔值，true 表示静音）
+
+
+    -->
+
+    <!-- 关于方法
+         canPlayType：测试浏览器是否支持指定的媒体类型
+                        var support = videoElement.canPlayType(type);
+     -->
+
+     <!-- 事件
+         事件的处理方式
+            事件监听
+               videoElement.addEventListener(type,listener,useCapture)
+               其中 useCapture 默认为 false
+            句柄
+               <video ... onplay="init()"></video>
+               function init(){
+                  ...
+               }
+
+         事件介绍
+         参见《HTML5 权威指南 》
+      -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>多媒体属性</title>
+</head>
+<body>
+      <video width="640" height="360" src="C:\Users\月关\Desktop\1.mkv" autoplay preload="auto" controls="true" id="sample" muted="">
+         您的浏览器不支持 video 元素
+      </video>
+
+      <script type="text/javascript">
+         var vid = document.getElementById("sample");
+         vid.addEventListener("error", function(){
+            var error = vid.error;
+            switch (error) {
+               case 1:alert("用户的错误操作");
+                  break;
+               case 2:alert("网络问题无法播放");
+                  break;
+               case 3:alert("解码错误");
+                  break;
+               case 4:alert("不支持播放格式");
+                  break;
+            }
+         }, false)
+      </script>
+</body>
+</html>
