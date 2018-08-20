@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>网页换肤</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.wrap{
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 5px;
+			text-align: center;
+		}
+
+		button{
+			padding: 5px;
+			color: #F5F5F5;
+		}
+
+		.pink{
+			border: #FF1493;
+			background-color: #FF1493;
+		}
+
+		.grey{
+			border: #696969;
+			background-color: #696969;
+		}
+
+		.black{
+			border: #000000;
+			background-color: #000000;
+		}
+
+		.navBar{
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		table{
+			margin: 0 auto;
+			margin-top: 5px;
+		}
+
+		th{
+			border: 2px solid black;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			padding-left: 5px;
+			padding-right: 5px;
+			width: 10%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="changeButton">
+			<button class="pink">粉红少女</button>
+			<button class="grey">极简银灰</button>
+			<button class="black">酷雅纯黑</button>
+		</div>
+		<div class="navBar">
+			<table>
+				<tr>
+					<th>娱乐</th>
+					<th>体育</th>
+					<th>焦点</th>
+					<th>旅游</th>
+					<th>音乐</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	
+	<script type="text/javascript">
+		var buttons = document.querySelectorAll('button');
+		var th = document.querySelectorAll('th');
+
+		for(var i=0;i<buttons.length;i++){
+			(function(i){
+				buttons[i].onclick = function(){
+					if(buttons[i].textContent == "粉红少女"){
+						document.body.style.backgroundColor = "#FF1493";
+						document.body.style.color = '#F5F5F5';
+					}else if(buttons[i].textContent == "极简银灰"){
+						document.body.style.backgroundColor = "#696969";
+						document.body.style.color = '#000000';
+						for(var j=0;j<th.length;j++){
+							th[j].style.borderColor = "#F5F5F5";
+						}
+					}else if(buttons[i].textContent == "酷雅纯黑"){
+						document.body.style.backgroundColor = "#000000";
+						document.body.style.color = '#F5F5F5';
+						for(var j=0;j<th.length;j++){
+							th[j].style.borderColor = "#F5F5F5";
+						}
+					}
+				}
+			})(i);
+		}
+	</script>
+</body>
+</html>
