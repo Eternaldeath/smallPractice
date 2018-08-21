@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>原生 JavaScript 练习展示</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.container{
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 5px;
+			padding: 5px;
+			border: 10px solid 	#DDDDDD;
+			border-radius: 10px;
+		}
+
+		ul{
+			background-color: 	#00DD00;
+			color: #FFFFFF;
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		li{
+			list-style: none;
+			background-color: 	#00BBFF;
+			color: #FFFFFF;
+			padding: 3px;
+			display: none;
+			cursor: pointer;
+		}
+
+		.intro{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul>第一课（6）
+			<li>控制 Div 属性</li>
+			<li>网页换肤</li>
+		</ul>
+		<ul>第二课（12）
+			<li>百度输入法</li>
+		</ul>
+	</div>
+
+	<div class="intro">
+		<b>本项目建议在 chrome 浏览器下查看。</b>
+	</div>
+	<div class="intro">参考：
+		<b>
+			<a href="https://zhuanlan.zhihu.com/p/22766255">有哪些适合新手练手的项目</a>
+		</b>
+	</div>
+
+	<script type="text/javascript">
+		var ul = document.querySelectorAll('ul');
+		var li = document.querySelectorAll('li');
+		
+				
+		for(var i=0 ;i<ul.length;i++){	
+		//i 的值被锁存在了匿名函数里面
+		    (function(i){
+		    	var chils = ul[i].children;
+		        ul[i].onclick = function(){
+		        	for(var j=0;j<chils.length;j++){
+		        		if(chils[j].style.display != "list-item"){
+		        			chils[j].style.display = "list-item";
+		        		}else{
+		        			chils[j].style.display = "none";
+		        		}
+		        		
+		        	}	
+		    }
+		})(i);
+
+		}
+	</script>
+</body>
+</html>

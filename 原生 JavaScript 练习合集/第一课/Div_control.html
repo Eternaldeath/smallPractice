@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>控制 Div 属性</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+		.wrap{
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.Div{
+			margin: 0 auto;
+			margin-top: 5px;
+			width: 50%;
+			height: 300px;
+		}
+
+		.showDiv{
+			height: 100%;
+			border: 1px solid #000000;
+			background-color: #000000;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="button">
+			<button>变宽</button>
+			<button>变高</button>
+			<button>变色</button>
+			<button>隐藏</button>
+			<button>重置</button>			
+		</div>
+		<div class="Div">
+			<div class="showDiv">
+			</div>
+		</div>
+
+	</div>
+
+<script type="text/javascript">
+	var buttons = document.querySelectorAll('button');
+	var div = document.querySelector('.showDiv');
+
+	for(var i=0;i<buttons.length;i++){
+		(function(i){
+			buttons[i].onclick = function(){
+				if(buttons[i].textContent == '变宽'){
+					div.style.width = '500px';
+				}else if(buttons[i].textContent == '变高'){
+					div.style.height = '500px';
+				}else if(buttons[i].textContent == '变色'){
+					div.style.backgroundColor = '#FF0000 ';
+				}else if(buttons[i].textContent == '隐藏'){
+					div.style.visibility = 'hidden';
+				}else{
+					div.style.width = '100%';
+					div.style.height  = '100%';
+					div.style.backgroundColor = '#000000 ';
+					div.style.visibility = 'visible';
+				}
+			}
+		})(i);
+	}
+</script>
+</body>
+</html>
