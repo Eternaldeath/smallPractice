@@ -1,0 +1,16 @@
+$length: 100px;
+$newLength: 200px;
+$black: #000000	;
+$green: #00FF00;
+
+.block{
+	height: $length;
+	widht: $length;
+	background-color: $black;
+}
+
+.block:hover{
+	height: $newLength;
+	widht: $newLength;
+	background-color: $green;
+}

@@ -1,0 +1,11 @@
+.block {
+  height: 100px;
+  widht: 100px;
+  background-color: #000000; }
+
+.block:hover {
+  height: 200px;
+  widht: 200px;
+  background-color: #00FF00; }
+
+/*# sourceMappingURL=mouseOverAndOut.css.map */

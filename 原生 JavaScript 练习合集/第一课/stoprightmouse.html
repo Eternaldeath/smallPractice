@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>阻止右键</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>
+		oncontextmenu 方法是设置右键的触发事件
+	</p>
+	<p>
+		右键已经被禁止了
+	</p>
+
+<script type="text/javascript">
+	    document.oncontextmenu = function (event) {
+            event.preventDefault();
+        };
+</script>
+</body>
+</html>

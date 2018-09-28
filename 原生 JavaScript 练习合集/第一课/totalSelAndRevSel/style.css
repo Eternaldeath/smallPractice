@@ -1,0 +1,23 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrap{
+	width: 30%;
+	height: 500px;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+.upDiv{
+	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: center;
+}
+
+.downDiv{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

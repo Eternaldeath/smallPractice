@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html,body{
+	height: 100%;
+}
+
+.background{
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 0.5;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+
+.Popup{
+	width: 50%;
+	height: 300px;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	margin-top: 50px;
+}

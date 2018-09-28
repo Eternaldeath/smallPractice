@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>鼠标点击显示坐标</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div{
+			border: 1px solid black;
+			background-color: lightblue;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		相对于浏览器窗口
+		<code>
+				var event = event || window.event;
+		    	alert("相对于屏幕坐标：[" + event.screenX + ", " + event.screenY + "]");	
+		</code>
+	</div>
+	<div>
+		相对于浏览器窗口
+		<code>
+				var event = event || window.event;
+		    	alert("相对于浏览器坐标：[" + event.clientX + ", " + event.clientY + "]");	
+		</code>
+	</div>
+
+	<script type="text/javascript">
+		var e = event || window.event;
+
+		document.onclick = function(e){
+			alert("相对于屏幕坐标：[" + e.screenX + " , " + e.screenY + "]");	
+			alert("相对于浏览器坐标：[" + e.clientX + " , " + e.clientY + "]");	
+		}
+		
+
+		
+	</script>
+</body>
+</html>

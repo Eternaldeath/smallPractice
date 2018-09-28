@@ -1,0 +1,36 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrap{
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.content{
+	width: 100%;
+	height: 300px;
+	border: 1px solid #000000; 
+}
+
+.nav{
+	display: flex;
+	flex-direction: row;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.nav div{
+	padding: 3px;
+}
+
+.showContent{
+	padding: 5px;
+}
+
+.intro{
+	width: 50%;
+	margin: 0 auto;
+}

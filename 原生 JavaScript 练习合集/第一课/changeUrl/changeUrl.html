@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>改变图片路径</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.wrap{
+			width: 50%;
+			margin: 0 auto;
+		}
+
+		.content{
+			width: 100%;
+			border: 1px solid #000000;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 5px;
+		}
+
+		img{
+			width: 150px;
+			height: 100px;
+		}
+
+		.mainDisplay img{
+			width: 250px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="content">
+			<div class="mainDisplay">
+				<img src="1.jpeg" class="mainImg">
+			</div>
+			<div class="otherDisplay">
+				<img src="1.jpeg" class="changeUrl">
+				<img src="2.jpeg" class="changeUrl">
+				<img src="3.jpeg" class="changeUrl">
+				<img src="4.jpeg" class="changeUrl">
+				<img src="5.jpeg" class="changeUrl">
+				<img src="6.jpeg" class="changeUrl">
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var img = document.querySelectorAll('.changeUrl');
+		var mainImg = document.querySelector('.mainImg');
+
+		window.onload = function(){
+			for(var i=0;i<img.length;i++){
+				(function(i){
+					img[i].onmouseover = function(){
+						var getUrl = img[i].getAttribute('src');
+						mainImg.setAttribute("src", getUrl);
+					}
+				})(i);
+			}
+		}
+	</script>
+</body>
+</html>

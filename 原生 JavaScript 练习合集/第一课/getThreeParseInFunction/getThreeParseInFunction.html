@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数接收三个传参并弹出</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="mainStyle.css">
+</head>
+<body>
+	<div class="wrap">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+	</div>
+
+	<p>知识点：使用了 BootStrap 的 CSS 样式和布局</p>
+
+<script type="text/javascript">
+	var button = document.querySelector('button');
+
+	button.onclick = function(){
+		var exampleInputEmail1 = document.querySelector('#exampleInputEmail1').value;
+		var exampleInputPassword1 = document.querySelector('#exampleInputPassword1').value;
+		alert('您的邮箱是 '+ exampleInputEmail1 + ' , ' + '您的密码是 ' + exampleInputPassword1);
+	}
+
+</script>
+</body>
+</html>
